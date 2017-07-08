@@ -10,6 +10,7 @@ import UIKit
 
 protocol AddActivityControllerDelegate:class {
     func didFinishAddingActivity(form: AddActivityViewController, activity: Extracurricular)
+    
 }
 
 class AddActivityViewController: UIViewController {
