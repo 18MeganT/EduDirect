@@ -50,7 +50,7 @@ class AddCourseViewController: UIViewController {
         let grade = Int(courseGrade.text!)
         let semester = Int(courseSemester.text!)
         let description = courseDescription.text
-        let newClass = Course(name!, semester: semester!, description: description!, grade: grade!)
+        let newClass = Course(name!, semester: semester!, description: description!, grade: grade!, workload: workLoad!)
         delegate?.didFinishAddingClass(form: self, course: newClass)
         dismiss(animated: true, completion: nil)
     }

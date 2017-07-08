@@ -16,7 +16,10 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
         
     }
     
-    var gradesArray = [Grades]()
+    var gradesArray = [Grades(grade: 9, classes: []),
+                       Grades(grade: 10, classes: []),
+                       Grades(grade: 11, classes: []),
+                       Grades(grade: 12, classes: [])]
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -32,6 +35,11 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
             gradesArray[grade!-9].classes.append(course)
         }
         tableView.reloadData()
+        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        let context = appDelegate.persistentContainer.viewContext
+        course.saveToCoreData(context: context)
+        appDelegate.saveContext()
+        
         
     }
     override func viewDidLoad() {
@@ -40,11 +48,23 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
+        
+        // Load data from disk and and fill up our "gradesArray"
+        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        let context = appDelegate.persistentContainer.viewContext
+        var coursesData: [CourseData] = []
+        do {
+            coursesData = try context.fetch(CourseData.fetchRequest()) as! [CourseData]
+        } catch {
+            print("Failed to add course.")
+        }
+        for courseData in coursesData {
+            let grade = Int(courseData.grade)
+            let course = Course(courseData.name!, semester: Int(courseData.semester), description: courseData.course_description, grade: Int(courseData.grade), workload: courseData.workload!)
+            gradesArray[grade-9].classes.append(course)
+        }
+        
         tableView.reloadData()
-        gradesArray = [Grades(grade: 9, classes: [Course()]),
-                       Grades(grade: 10, classes: [Course()]),
-                       Grades(grade: 11, classes: [Course()]),
-                       Grades(grade: 12, classes: [Course()])]
     }
 
     override func didReceiveMemoryWarning() {
