@@ -1,0 +1,6 @@
+framework module Pods_EduDirect {
+  umbrella header "Pods-EduDirect-umbrella.h"
+
+  export *
+  module * { export * }
+}

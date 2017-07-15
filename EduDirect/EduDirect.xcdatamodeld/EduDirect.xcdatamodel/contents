@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ActivityData" representedClassName="ActivityData" syncable="YES" codeGenerationType="class">
+        <attribute name="activity_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commitment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="grade" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="CourseData" representedClassName="CourseData" syncable="YES" codeGenerationType="class">
         <attribute name="course_description" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="grade" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -9,5 +15,6 @@
     </entity>
     <elements>
         <element name="CourseData" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="ActivityData" positionX="-54" positionY="27" width="128" height="105"/>
     </elements>
 </model>

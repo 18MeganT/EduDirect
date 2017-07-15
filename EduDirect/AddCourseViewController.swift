@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 protocol AddCourseControllerDelegate:class {
     func didFinishAddingClass(form: AddCourseViewController, course: Course)
@@ -50,11 +51,20 @@ class AddCourseViewController: UIViewController {
         let grade = Int(courseGrade.text!)
         let semester = Int(courseSemester.text!)
         let description = courseDescription.text
+        if (grade! < 9 || grade! > 12)
+        {
+            courseGrade.endEditing(true)
+            SCLAlertView().showError("Incorrect Grade Input.", subTitle: "Grade must be between 9 and 12.")
+            return;
+        }
         let newClass = Course(name!, semester: semester!, description: description!, grade: grade!, workload: workLoad!)
         delegate?.didFinishAddingClass(form: self, course: newClass)
         dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func onCancelButtonPress(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

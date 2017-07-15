@@ -6,6 +6,7 @@
 //  Copyright © 2017 MMT. All rights reserved.
 //
 
+import CoreData
 import Foundation
 class Extracurricular {
     var name: String!
@@ -23,6 +24,13 @@ class Extracurricular {
         self.commitment = commitment
         self.description = description
         self.grade = grade
+    }
+    func saveToCoreData(context: NSManagedObjectContext) {
+        let activityData = ActivityData(context: context)
+        activityData.activity_description = self.description
+        activityData.name = self.name
+        activityData.grade = Int32(self.grade)
+        activityData.commitment = self.commitment
     }
     
 }

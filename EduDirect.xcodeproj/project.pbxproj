@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C816A707EF44F91F80E2587 /* Pods_EduDirectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5C993FA270C038FF062080 /* Pods_EduDirectTests.framework */; };
 		6207A50E1F036C0C0088D5D4 /* AcademicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6207A50D1F036C0C0088D5D4 /* AcademicsViewController.swift */; };
 		6207A5101F0379300088D5D4 /* AddActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6207A50F1F0379300088D5D4 /* AddActivityTableViewCell.swift */; };
 		624A620C1F0A0FCA001EEC40 /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624A620B1F0A0FCA001EEC40 /* AddActivityViewController.swift */; };
@@ -17,7 +18,6 @@
 		6278B0911EFDE15400575D46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6278B0901EFDE15400575D46 /* AppDelegate.swift */; };
 		6278B0931EFDE15400575D46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6278B0921EFDE15400575D46 /* ViewController.swift */; };
 		6278B0961EFDE15400575D46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6278B0941EFDE15400575D46 /* Main.storyboard */; };
-		6278B0991EFDE15400575D46 /* EduDirect.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6278B0971EFDE15400575D46 /* EduDirect.xcdatamodeld */; };
 		6278B09B1EFDE15400575D46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6278B09A1EFDE15400575D46 /* Assets.xcassets */; };
 		6278B09E1EFDE15400575D46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6278B09C1EFDE15400575D46 /* LaunchScreen.storyboard */; };
 		6278B0A91EFDE15400575D46 /* EduDirectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6278B0A81EFDE15400575D46 /* EduDirectTests.swift */; };
@@ -25,6 +25,10 @@
 		628A04281F00A99200295443 /* Extracurricular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628A04271F00A99200295443 /* Extracurricular.swift */; };
 		628A042A1F00CCA900295443 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628A04291F00CCA900295443 /* ActivitiesViewController.swift */; };
 		628A042C1F00CF5700295443 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628A042B1F00CF5700295443 /* ActivityTableViewCell.swift */; };
+		62B754711F188DA5007C6B70 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B754701F188DA5007C6B70 /* ProfileViewController.swift */; };
+		62C4536D1F11FB0C001CB37B /* EduDirect.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 62C4536B1F11FB0C001CB37B /* EduDirect.xcdatamodeld */; };
+		B1BA9B77E659425AC83E4B16 /* Pods_EduDirect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9266A0EC63D97258FF45C6B /* Pods_EduDirect.framework */; };
+		E4441BD220DEFD33C6235931 /* Pods_EduDirectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276B1B306E1126D9A2058D97 /* Pods_EduDirectUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		276B1B306E1126D9A2058D97 /* Pods_EduDirectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EduDirectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B5C993FA270C038FF062080 /* Pods_EduDirectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EduDirectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DD60FA4A9EA652214B2311C /* Pods-EduDirect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduDirect.release.xcconfig"; path = "Pods/Target Support Files/Pods-EduDirect/Pods-EduDirect.release.xcconfig"; sourceTree = "<group>"; };
+		5B6EC7AE24DDFD1AF0D64F83 /* Pods-EduDirect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduDirect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EduDirect/Pods-EduDirect.debug.xcconfig"; sourceTree = "<group>"; };
 		6207A50D1F036C0C0088D5D4 /* AcademicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcademicsViewController.swift; sourceTree = "<group>"; };
 		6207A50F1F0379300088D5D4 /* AddActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivityTableViewCell.swift; sourceTree = "<group>"; };
 		624A620B1F0A0FCA001EEC40 /* AddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +64,6 @@
 		6278B0901EFDE15400575D46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6278B0921EFDE15400575D46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6278B0951EFDE15400575D46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6278B0981EFDE15400575D46 /* EduDirect.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EduDirect.xcdatamodel; sourceTree = "<group>"; };
 		6278B09A1EFDE15400575D46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6278B09D1EFDE15400575D46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6278B09F1EFDE15400575D46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +76,13 @@
 		628A04271F00A99200295443 /* Extracurricular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extracurricular.swift; sourceTree = "<group>"; };
 		628A04291F00CCA900295443 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		628A042B1F00CF5700295443 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		62B754701F188DA5007C6B70 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		62C4536C1F11FB0C001CB37B /* EduDirect.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EduDirect.xcdatamodel; sourceTree = "<group>"; };
+		7D5A5A910B6D6D7848108F9A /* Pods-EduDirectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduDirectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EduDirectUITests/Pods-EduDirectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D9EE9E1A9CB98DF7D9530637 /* Pods-EduDirectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduDirectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EduDirectUITests/Pods-EduDirectUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EEA41A43B3321297CC52668A /* Pods-EduDirectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduDirectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EduDirectTests/Pods-EduDirectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F873E6CF4631BD398F3A8D4B /* Pods-EduDirectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduDirectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EduDirectTests/Pods-EduDirectTests.release.xcconfig"; sourceTree = "<group>"; };
+		F9266A0EC63D97258FF45C6B /* Pods_EduDirect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EduDirect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1BA9B77E659425AC83E4B16 /* Pods_EduDirect.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C816A707EF44F91F80E2587 /* Pods_EduDirectTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,12 +106,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4441BD220DEFD33C6235931 /* Pods_EduDirectUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5EDB817CC66B83A4C6AEAE56 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B6EC7AE24DDFD1AF0D64F83 /* Pods-EduDirect.debug.xcconfig */,
+				3DD60FA4A9EA652214B2311C /* Pods-EduDirect.release.xcconfig */,
+				EEA41A43B3321297CC52668A /* Pods-EduDirectTests.debug.xcconfig */,
+				F873E6CF4631BD398F3A8D4B /* Pods-EduDirectTests.release.xcconfig */,
+				7D5A5A910B6D6D7848108F9A /* Pods-EduDirectUITests.debug.xcconfig */,
+				D9EE9E1A9CB98DF7D9530637 /* Pods-EduDirectUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6256B8A71EFEC9C3008EB451 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +149,7 @@
 		6256B8AB1EFECB11008EB451 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				62B754701F188DA5007C6B70 /* ProfileViewController.swift */,
 				624A620B1F0A0FCA001EEC40 /* AddActivityViewController.swift */,
 				6256B8B21EFEDE82008EB451 /* AddCourseViewController.swift */,
 				6207A50D1F036C0C0088D5D4 /* AcademicsViewController.swift */,
@@ -135,6 +166,8 @@
 				6278B0A71EFDE15400575D46 /* EduDirectTests */,
 				6278B0B21EFDE15400575D46 /* EduDirectUITests */,
 				6278B08E1EFDE15400575D46 /* Products */,
+				5EDB817CC66B83A4C6AEAE56 /* Pods */,
+				ACC5C5DF2202EF10A5C2AA43 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,8 +191,8 @@
 				6278B0941EFDE15400575D46 /* Main.storyboard */,
 				6278B09A1EFDE15400575D46 /* Assets.xcassets */,
 				6278B09C1EFDE15400575D46 /* LaunchScreen.storyboard */,
+				62C4536B1F11FB0C001CB37B /* EduDirect.xcdatamodeld */,
 				6278B09F1EFDE15400575D46 /* Info.plist */,
-				6278B0971EFDE15400575D46 /* EduDirect.xcdatamodeld */,
 			);
 			path = EduDirect;
 			sourceTree = "<group>";
@@ -182,6 +215,16 @@
 			path = EduDirectUITests;
 			sourceTree = "<group>";
 		};
+		ACC5C5DF2202EF10A5C2AA43 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F9266A0EC63D97258FF45C6B /* Pods_EduDirect.framework */,
+				3B5C993FA270C038FF062080 /* Pods_EduDirectTests.framework */,
+				276B1B306E1126D9A2058D97 /* Pods_EduDirectUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -189,9 +232,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6278B0B81EFDE15400575D46 /* Build configuration list for PBXNativeTarget "EduDirect" */;
 			buildPhases = (
+				26FA73E5B1D1F93C690A31E6 /* [CP] Check Pods Manifest.lock */,
 				6278B0891EFDE15400575D46 /* Sources */,
 				6278B08A1EFDE15400575D46 /* Frameworks */,
 				6278B08B1EFDE15400575D46 /* Resources */,
+				75B3CA7DD88DFEF3C4A0DA37 /* [CP] Embed Pods Frameworks */,
+				5BF9354B7D4813F0D5A0C6EF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,9 +252,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6278B0BB1EFDE15400575D46 /* Build configuration list for PBXNativeTarget "EduDirectTests" */;
 			buildPhases = (
+				C14486DE8188D48D939AD575 /* [CP] Check Pods Manifest.lock */,
 				6278B0A01EFDE15400575D46 /* Sources */,
 				6278B0A11EFDE15400575D46 /* Frameworks */,
 				6278B0A21EFDE15400575D46 /* Resources */,
+				CF3F0FE554D80931E0BA2978 /* [CP] Embed Pods Frameworks */,
+				36B80BCB1E4A45FA03EAEF52 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -224,9 +273,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6278B0BE1EFDE15400575D46 /* Build configuration list for PBXNativeTarget "EduDirectUITests" */;
 			buildPhases = (
+				C34D02895DFDB4741BC289AC /* [CP] Check Pods Manifest.lock */,
 				6278B0AB1EFDE15400575D46 /* Sources */,
 				6278B0AC1EFDE15400575D46 /* Frameworks */,
 				6278B0AD1EFDE15400575D46 /* Resources */,
+				37EF416D226BFBBE0B57DC44 /* [CP] Embed Pods Frameworks */,
+				1E1053BFFA605E2EE2584EF5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +302,7 @@
 				TargetAttributes = {
 					6278B08C1EFDE15400575D46 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9N8T6ULD4P;
 						ProvisioningStyle = Automatic;
 					};
 					6278B0A31EFDE15400575D46 = {
@@ -311,6 +364,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E1053BFFA605E2EE2584EF5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EduDirectUITests/Pods-EduDirectUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		26FA73E5B1D1F93C690A31E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		36B80BCB1E4A45FA03EAEF52 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EduDirectTests/Pods-EduDirectTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37EF416D226BFBBE0B57DC44 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EduDirectUITests/Pods-EduDirectUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BF9354B7D4813F0D5A0C6EF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EduDirect/Pods-EduDirect-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75B3CA7DD88DFEF3C4A0DA37 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EduDirect/Pods-EduDirect-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C14486DE8188D48D939AD575 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C34D02895DFDB4741BC289AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CF3F0FE554D80931E0BA2978 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EduDirectTests/Pods-EduDirectTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6278B0891EFDE15400575D46 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -318,12 +509,13 @@
 			files = (
 				6278B0931EFDE15400575D46 /* ViewController.swift in Sources */,
 				6256B8B31EFEDE82008EB451 /* AddCourseViewController.swift in Sources */,
-				6278B0991EFDE15400575D46 /* EduDirect.xcdatamodeld in Sources */,
 				6256B8AF1EFECFFB008EB451 /* ClassTableViewCell.swift in Sources */,
 				628A042C1F00CF5700295443 /* ActivityTableViewCell.swift in Sources */,
+				62B754711F188DA5007C6B70 /* ProfileViewController.swift in Sources */,
 				6207A50E1F036C0C0088D5D4 /* AcademicsViewController.swift in Sources */,
 				6207A5101F0379300088D5D4 /* AddActivityTableViewCell.swift in Sources */,
 				6256B8B11EFED991008EB451 /* AddCourseTableViewCell.swift in Sources */,
+				62C4536D1F11FB0C001CB37B /* EduDirect.xcdatamodeld in Sources */,
 				6278B0911EFDE15400575D46 /* AppDelegate.swift in Sources */,
 				6256B8AA1EFECA43008EB451 /* Course.swift in Sources */,
 				624A620C1F0A0FCA001EEC40 /* AddActivityViewController.swift in Sources */,
@@ -480,9 +672,12 @@
 		};
 		6278B0B91EFDE15400575D46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B6EC7AE24DDFD1AF0D64F83 /* Pods-EduDirect.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9N8T6ULD4P;
 				INFOPLIST_FILE = EduDirect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MMT.EduDirect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -492,9 +687,12 @@
 		};
 		6278B0BA1EFDE15400575D46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DD60FA4A9EA652214B2311C /* Pods-EduDirect.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9N8T6ULD4P;
 				INFOPLIST_FILE = EduDirect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MMT.EduDirect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -504,6 +702,7 @@
 		};
 		6278B0BC1EFDE15400575D46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEA41A43B3321297CC52668A /* Pods-EduDirectTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -518,6 +717,7 @@
 		};
 		6278B0BD1EFDE15400575D46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F873E6CF4631BD398F3A8D4B /* Pods-EduDirectTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -532,6 +732,7 @@
 		};
 		6278B0BF1EFDE15400575D46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D5A5A910B6D6D7848108F9A /* Pods-EduDirectUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = EduDirectUITests/Info.plist;
@@ -545,6 +746,7 @@
 		};
 		6278B0C01EFDE15400575D46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9EE9E1A9CB98DF7D9530637 /* Pods-EduDirectUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = EduDirectUITests/Info.plist;
@@ -598,12 +800,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		6278B0971EFDE15400575D46 /* EduDirect.xcdatamodeld */ = {
+		62C4536B1F11FB0C001CB37B /* EduDirect.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6278B0981EFDE15400575D46 /* EduDirect.xcdatamodel */,
+				62C4536C1F11FB0C001CB37B /* EduDirect.xcdatamodel */,
 			);
-			currentVersion = 6278B0981EFDE15400575D46 /* EduDirect.xcdatamodel */;
+			currentVersion = 62C4536C1F11FB0C001CB37B /* EduDirect.xcdatamodel */;
 			path = EduDirect.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -44,9 +44,14 @@ class AddActivityViewController: UIViewController {
         delegate?.didFinishAddingActivity(form: self, activity: newActivity)
         dismiss(animated: true, completion: nil)
 
+       
         
     }
     
+    @IBAction func cancelPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+
+    }
     /*
     // MARK: - Navigation
 

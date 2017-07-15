@@ -17,7 +17,10 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
     }
     
     
-    var gradesArray = [Grades]()
+    var gradesArray = [Grades(grade: 9, activities: []),
+                       Grades(grade: 10, activities: []),
+                       Grades(grade: 11, activities: []),
+                       Grades(grade: 12, activities: [])]
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -25,7 +28,7 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
     func didFinishAddingActivity(form: AddActivityViewController, activity: Extracurricular) {
         
         let grade = activity.grade
-        if (grade! < 9)
+        if (grade! < 9 || grade! < 12)
         {
             gradesArray[0].activities.append(activity)
         }
@@ -34,18 +37,42 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
             gradesArray[grade!-9].activities.append(activity)
         }
         tableView.reloadData()
+        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        let context = appDelegate.persistentContainer.viewContext
+        activity.saveToCoreData(context: context)
+        appDelegate.saveContext()
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.green
+        self.tabBarItem.title = "Activities"
+        self.tabBarItem.image = UIImage(named: "star")
         tableView.dataSource = self
         tableView.delegate = self
+        
+        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        let context = appDelegate.persistentContainer.viewContext
+        var activitiesData: [ActivityData] = []
+        do {
+            activitiesData = try context.fetch(ActivityData.fetchRequest()) as! [ActivityData]
+        } catch {
+            print("Failed to add activity.")
+        }
         tableView.reloadData()
-        gradesArray = [Grades(grade: 9, activities:     [Extracurricular()]),
-                       Grades(grade: 10, activities: [Extracurricular()]),
-                       Grades(grade: 11, activities: [Extracurricular()]),
-                       Grades(grade: 12, activities: [Extracurricular()])]
+        for activityData in activitiesData {
+            let grade = Int(activityData.grade)
+            let activity = Extracurricular(activityData.name!, commitment: activityData.commitment!, description: activityData.activity_description!, grade: Int(activityData.grade))
+            if (grade < 9 || grade > 12)
+            {
+                gradesArray[0].activities.append(activity)
+            }
+            else
+            {
+                gradesArray[grade-9].activities.append(activity)
+            }
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -62,7 +89,7 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section \(section)"
+        return "Grade \(section+9)"
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

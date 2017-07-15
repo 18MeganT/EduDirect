@@ -16,8 +16,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+//        let vc1 = ProfileViewController()
+//        let vc2 = AcademicsViewController()
+//        let vc3 = ActivitiesViewController()
+//        let vc4 = setUpViewController(title: "More", backgroundColor: UIColor.green)
+//        
+//        // Set up the Tab Bar Controller
+//        let tabBarController = UITabBarController()
+//        tabBarController.viewControllers = [vc1, vc2, vc3, vc4]
+//        
+//        // Make the Tab Bar Controller the root view controller
+//        window?.rootViewController = tabBarController
+//        window?.makeKeyAndVisible()
         // Override point for customization after application launch.
         return true
+    }
+    func setUpViewController(title: String, backgroundColor: UIColor) -> UIViewController {
+        let vc = UIViewController()
+        vc.view.backgroundColor = backgroundColor
+        vc.tabBarItem.title = title
+        vc.tabBarItem.image = UIImage(named: "star")
+        return vc
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -26,7 +26,7 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
     
     func didFinishAddingClass(form: AddCourseViewController, course: Course) {
         let grade = course.grade
-        if (grade! < 9)
+        if (grade! < 9 || grade! > 12)
         {
             gradesArray[0].classes.append(course)
         }
@@ -39,13 +39,15 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
         let context = appDelegate.persistentContainer.viewContext
         course.saveToCoreData(context: context)
         appDelegate.saveContext()
-        
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor.purple
+        self.tabBarItem.title = "Academics"
+        self.tabBarItem.image = UIImage(named: "star")
+        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -61,7 +63,15 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
         for courseData in coursesData {
             let grade = Int(courseData.grade)
             let course = Course(courseData.name!, semester: Int(courseData.semester), description: courseData.course_description, grade: Int(courseData.grade), workload: courseData.workload!)
-            gradesArray[grade-9].classes.append(course)
+            
+            if (grade < 9 || grade > 12)
+            {
+                gradesArray[0].classes.append(course)
+            }
+            else
+            {
+                gradesArray[grade-9].classes.append(course)
+            }
         }
         
         tableView.reloadData()
@@ -110,13 +120,18 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gradesArray[section].classes.count + 1
     }
+    func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.backgroundColor = UIColor.clear
+        return indexPath
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return gradesArray.count
         }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section \(section)"
+        return "Grade \(section+9)"
     }
     /*
     // MARK: - Navigation
