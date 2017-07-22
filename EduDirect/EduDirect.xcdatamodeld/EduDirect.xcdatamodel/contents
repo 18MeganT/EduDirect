@@ -13,8 +13,15 @@
         <attribute name="semester" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="workload" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="StudentData" representedClassName="StudentData" syncable="YES" codeGenerationType="class">
+        <attribute name="grade" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="major" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="school" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="CourseData" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="ActivityData" positionX="-54" positionY="27" width="128" height="105"/>
+        <element name="CourseData" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="StudentData" positionX="-54" positionY="36" width="128" height="105"/>
     </elements>
 </model>

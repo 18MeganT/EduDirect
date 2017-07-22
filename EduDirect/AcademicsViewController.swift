@@ -44,12 +44,12 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor.purple
-        self.tabBarItem.title = "Academics"
-        self.tabBarItem.image = UIImage(named: "star")
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        tableView.estimatedRowHeight = 300
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         // Load data from disk and and fill up our "gradesArray"
         let appDelegate = (UIApplication.shared.delegate as! AppDelegate)

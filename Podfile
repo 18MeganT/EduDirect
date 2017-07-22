@@ -7,6 +7,8 @@ target 'EduDirect' do
 
   # Pods for EduDirect
   pod 'SCLAlertView', '~> 0.7'
+  pod 'SwiftForms', '~> 1.7'
+  pod 'Eureka'
   target 'EduDirectTests' do
     inherit! :search_paths
     # Pods for testing

@@ -1,12 +1,18 @@
 PODS:
+  - Eureka (3.0.0)
   - SCLAlertView (0.7.0)
+  - SwiftForms (1.7)
 
 DEPENDENCIES:
+  - Eureka
   - SCLAlertView (~> 0.7)
+  - SwiftForms (~> 1.7)
 
 SPEC CHECKSUMS:
+  Eureka: f36fd440c3ebb7bfea0a4fbe6f16a05f1cb35906
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
+  SwiftForms: 3f3dbaa79fe54eb1ccd0aca8d0cd1e38eb00537e
 
-PODFILE CHECKSUM: cb284a4b185ca966e85b6296ecddc7769e12a069
+PODFILE CHECKSUM: cd9d68cf6a4dc24083b39afd6f2bdf8630202cae
 
 COCOAPODS: 1.2.1

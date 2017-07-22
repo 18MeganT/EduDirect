@@ -19,10 +19,10 @@ class Extracurricular {
         self.description = "my main priority right now"
         self.grade = 9
     }
-    init(_ name: String, commitment: String, description: String, grade: Int) {
+    init(_ name: String, commitment: String?, description: String?, grade: Int) {
         self.name = name
-        self.commitment = commitment
-        self.description = description
+        self.commitment = commitment ?? "N/A"
+        self.description = description ?? "No Description"
         self.grade = grade
     }
     func saveToCoreData(context: NSManagedObjectContext) {

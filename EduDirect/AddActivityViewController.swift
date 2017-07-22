@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SCLAlertView
 protocol AddActivityControllerDelegate:class {
     func didFinishAddingActivity(form: AddActivityViewController, activity: Extracurricular)
     
@@ -40,6 +40,24 @@ class AddActivityViewController: UIViewController {
         let commitment = activityCommitment.text
         let grade = Int(activityGrade.text!)
         let description = activityDescription.text
+        if name == nil {
+            SCLAlertView().showError("Required Field", subTitle: "Please fill in the name of the course")
+            return;
+        }
+        var num = Int(grade!)
+        if  num == nil {
+            activityGrade.endEditing(true)
+            SCLAlertView().showError("Incorrect Grade Input.", subTitle: "Grade must be  a number between 9 and 12.")
+            return;
+        }
+        if (grade! < 9 || grade! > 12)
+        {
+            activityGrade.endEditing(true)
+            SCLAlertView().showError("Incorrect Grade Input.", subTitle: "Grade must be between 9 and 12.")
+            return;
+        }
+
+        
         let newActivity = Extracurricular(name!, commitment: commitment!, description: description!, grade: grade!)
         delegate?.didFinishAddingActivity(form: self, activity: newActivity)
         dismiss(animated: true, completion: nil)

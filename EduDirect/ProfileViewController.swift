@@ -8,13 +8,21 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-
+class ProfileViewController: UIViewController, UITabBarControllerDelegate {
+    
+    
+    @IBOutlet weak var nameField: UITextField!
+    
+    @IBOutlet weak var schoolField: UITextField!
+    
+    @IBOutlet weak var gradeField: UITextField!
+    
+    @IBOutlet weak var majorField: UITextField!
+    
+    var student = Student()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.blue
-        self.tabBarItem.title = "Profile"
-        self.tabBarItem.image = UIImage(named: "star")
 
         // Do any additional setup after loading the view.
     }
@@ -24,7 +32,14 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+        func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+            
+            if let myController = viewController as? ProfileViewController {
+                // do something
+            }
+            return true
+        }
     /*
     // MARK: - Navigation
 

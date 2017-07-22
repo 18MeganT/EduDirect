@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window?.rootViewController = tabBarController
 //        window?.makeKeyAndVisible()
         // Override point for customization after application launch.
+        UINavigationBar.appearance().backgroundColor = UIColor(red: 33.0/255, green: 192.0/255, blue: 100.0/255, alpha: 1)
+        
         return true
     }
     func setUpViewController(title: String, backgroundColor: UIColor) -> UIViewController {

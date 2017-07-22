@@ -21,12 +21,12 @@ class Course {
         self.description = "a difficult class"
         self.grade = 9
     }
-    init(_ name: String, semester: Int, description: String?, grade: Int, workload: String) {
+    init(_ name: String, semester: Int, description: String?, grade: Int, workload: String?) {
         self.name = name
         self.semester = semester
         self.description = description ?? "No description"
         self.grade = grade
-        self.workload = workload
+        self.workload = workload ?? "N/A"
     }
     
     func saveToCoreData(context: NSManagedObjectContext) {
