@@ -40,6 +40,7 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
         course.saveToCoreData(context: context)
         appDelegate.saveContext()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,7 +49,7 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.estimatedRowHeight = 300
+        tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         
         // Load data from disk and and fill up our "gradesArray"
@@ -100,6 +101,7 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
         cell.courseName.text = course.name
         cell.courseSemester.text = String(course.semester)
         cell.courseDescription.text = course.description
+        cell.courseWorkload.text = course.workload
         return cell
         
     }
@@ -116,6 +118,7 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
             self.present(controller, animated: true, completion: nil)
             
         }
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gradesArray[section].classes.count + 1
@@ -128,7 +131,7 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return gradesArray.count
-        }
+    }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Grade \(section+9)"

@@ -8,12 +8,14 @@
 
 import UIKit
 import SCLAlertView
+import Eureka
+
 protocol AddActivityControllerDelegate:class {
     func didFinishAddingActivity(form: AddActivityViewController, activity: Extracurricular)
     
 }
 
-class AddActivityViewController: UIViewController {
+class AddActivityViewController: FormViewController {
     
     @IBOutlet weak var activityName: UITextField!
     
@@ -26,7 +28,35 @@ class AddActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.form +++ Section("Activity Information")
+            <<< TextRow() { row in
+                row.tag = "name"
+                row.title = "Activity Name"
+                row.placeholder = "Soccer"
+                row.add(rule: RuleRequired())
+                row.validationOptions = .validatesOnChange
+                
+            }
+            <<< TextRow() { row in
+                row.tag = "grade"
+                row.title = "Grade"
+                row.placeholder = "9"
+                row.add(rule: RuleRequired())
+                row.validationOptions = .validatesOnChange
+                
+            }
+            <<< TextRow() { row in
+                row.tag = "commitment"
+                row.title = "Commitment"
+                row.placeholder = "10 hours/week"
+                
+            }
+        self.form +++ Section("Activity Description")
+            <<< TextAreaRow() { row in
+                row.tag = "description"
+                row.title = "Description"
+                row.placeholder = "My main priority."
+            }
         // Do any additional setup after loading the view.
     }
 
@@ -36,29 +66,27 @@ class AddActivityViewController: UIViewController {
     }
     
     @IBAction func donePressed(_ sender: Any) {
-        let name = activityName.text
-        let commitment = activityCommitment.text
-        let grade = Int(activityGrade.text!)
-        let description = activityDescription.text
-        if name == nil {
+        let values = self.form.values()
+        guard let name = values["name"] as? String else {
             SCLAlertView().showError("Required Field", subTitle: "Please fill in the name of the course")
             return;
         }
-        var num = Int(grade!)
-        if  num == nil {
-            activityGrade.endEditing(true)
-            SCLAlertView().showError("Incorrect Grade Input.", subTitle: "Grade must be  a number between 9 and 12.")
+        let commitment = (values["commitment"] as? String) ?? ""
+        guard let grade_string = values["grade"] as? String else {
+            SCLAlertView().showError("Required Field", subTitle: "Please fill in the grade of the activity")
             return;
         }
-        if (grade! < 9 || grade! > 12)
+        guard let grade = Int(grade_string) else {
+            SCLAlertView().showError("Incorrect type", subTitle: "Please fill in a number for the grade.")
+            return;
+        }
+        let description = (values["description"] as? String) ?? ""
+        if (grade < 9 || grade > 12)
         {
-            activityGrade.endEditing(true)
             SCLAlertView().showError("Incorrect Grade Input.", subTitle: "Grade must be between 9 and 12.")
             return;
         }
-
-        
-        let newActivity = Extracurricular(name!, commitment: commitment!, description: description!, grade: grade!)
+        let newActivity = Extracurricular(name, commitment: commitment, description: description, grade: grade)
         delegate?.didFinishAddingActivity(form: self, activity: newActivity)
         dismiss(animated: true, completion: nil)
 

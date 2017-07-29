@@ -15,6 +15,7 @@ class ActivityTableViewCell: UITableViewCell {
     @IBOutlet weak var activityCommitment: UILabel!
     
     @IBOutlet weak var activityDescription: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layoutMargins = UIEdgeInsets.zero

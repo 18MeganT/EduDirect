@@ -30,16 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window?.makeKeyAndVisible()
         // Override point for customization after application launch.
         UINavigationBar.appearance().backgroundColor = UIColor(red: 33.0/255, green: 192.0/255, blue: 100.0/255, alpha: 1)
-        
+        UINavigationBar.appearance().tintColor = UIColor.blue
+        UITabBar.appearance().tintColor = UIColor(red: 33.0/255, green: 192.0/255, blue: 100.0/255, alpha: 1)
         return true
     }
-    func setUpViewController(title: String, backgroundColor: UIColor) -> UIViewController {
-        let vc = UIViewController()
-        vc.view.backgroundColor = backgroundColor
-        vc.tabBarItem.title = title
-        vc.tabBarItem.image = UIImage(named: "star")
-        return vc
-    }
+  
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

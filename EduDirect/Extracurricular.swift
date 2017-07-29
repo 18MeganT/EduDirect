@@ -24,6 +24,7 @@ class Extracurricular {
         self.commitment = commitment ?? "N/A"
         self.description = description ?? "No Description"
         self.grade = grade
+        print(grade)
     }
     func saveToCoreData(context: NSManagedObjectContext) {
         let activityData = ActivityData(context: context)

@@ -46,12 +46,14 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.green
-        self.tabBarItem.title = "Activities"
-        self.tabBarItem.image = UIImage(named: "star")
+        
         tableView.dataSource = self
         tableView.delegate = self
         
+        tableView.estimatedRowHeight = 200
+        // tableView.rowHeight = UITableViewAutomaticDimension
+        
+
         let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
         let context = appDelegate.persistentContainer.viewContext
         var activitiesData: [ActivityData] = []
@@ -60,7 +62,6 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
         } catch {
             print("Failed to add activity.")
         }
-        tableView.reloadData()
         for activityData in activitiesData {
             let grade = Int(activityData.grade)
             let activity = Extracurricular(activityData.name!, commitment: activityData.commitment!, description: activityData.activity_description!, grade: Int(activityData.grade))
@@ -73,6 +74,7 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
                 gradesArray[grade-9].activities.append(activity)
             }
         }
+        tableView.reloadData()
         // Do any additional setup after loading the view.
     }
 
@@ -108,6 +110,7 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
         cell.activityName.text = activity.name
         cell.activityCommitment.text = activity.commitment
         cell.activityDescription.text = activity.description
+        print(activity.name)
         return cell
         
     }
@@ -124,6 +127,7 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
             self.present(controller, animated: true, completion: nil)
             
         }
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
     
     /*

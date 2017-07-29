@@ -16,6 +16,7 @@ class ClassTableViewCell: UITableViewCell {
     
     @IBOutlet weak var courseSemester: UILabel!
     
+    @IBOutlet weak var courseWorkload: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layoutMargins = UIEdgeInsets.zero

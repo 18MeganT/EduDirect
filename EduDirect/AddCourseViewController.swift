@@ -69,6 +69,7 @@ class AddCourseViewController: FormViewController {
                 row.placeholder = "45 min"
                 
         }
+        self.form +++ Section("Course Description")
             <<< TextAreaRow() { row in
                 row.tag = "description"
                 row.title = "Description"

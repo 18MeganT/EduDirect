@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
-class ProfileViewController: UIViewController, UITabBarControllerDelegate {
+class ProfileViewController: UIViewController, UITabBarControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     
     
     @IBOutlet weak var nameField: UITextField!
@@ -23,9 +25,13 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // self.navigationController?.navigationBar.isTranslucent = false
+        // self.navigationController?.navigationBar.backgroundColor = UIColor(red: 33.0/255, green: 192.0/255, blue: 100.0/255, alpha: 1)
 
         // Do any additional setup after loading the view.
     }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -33,13 +39,14 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     
-        func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
-            
-            if let myController = viewController as? ProfileViewController {
-                // do something
-            }
-            return true
+    // Todo -- when you click off profile, we want to save the input information.
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
+        if viewController is ProfileViewController {
+            // do something
         }
+        return true
+    }
     /*
     // MARK: - Navigation
 
