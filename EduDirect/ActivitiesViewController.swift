@@ -51,7 +51,7 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
         tableView.delegate = self
         
         tableView.estimatedRowHeight = 200
-        // tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableViewAutomaticDimension
         
 
         let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
@@ -110,7 +110,8 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
         cell.activityName.text = activity.name
         cell.activityCommitment.text = activity.commitment
         cell.activityDescription.text = activity.description
-        print(activity.name)
+        cell.contentView.setNeedsLayout()
+        cell.contentView.layoutIfNeeded()
         return cell
         
     }

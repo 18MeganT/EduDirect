@@ -102,6 +102,8 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
         cell.courseSemester.text = String(course.semester)
         cell.courseDescription.text = course.description
         cell.courseWorkload.text = course.workload
+        cell.contentView.setNeedsLayout()
+        cell.contentView.layoutIfNeeded()
         return cell
         
     }
