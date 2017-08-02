@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class AcademicsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddCourseControllerDelegate {
     
@@ -138,6 +139,18 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Grade \(section+9)"
     }
+    
+    @IBAction func pressGradeButton(_ sender: UIButton) {
+        let section = sender.tag
+        if (section < 0 || section > 3) {
+            SCLAlertView().showError("Incorrect Section", subTitle: "Section does not exist. Please try again!")
+            return
+        }
+        var sectionRect = tableView.rect(forSection: section)
+        sectionRect.size.height = tableView.frame.size.height
+        tableView.scrollRectToVisible(sectionRect, animated: true)
+    }
+
     /*
     // MARK: - Navigation
 
