@@ -130,6 +130,7 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    
     /*
     // MARK: - Navigation
 
