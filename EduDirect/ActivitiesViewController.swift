@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableViewDelegate , AddActivityControllerDelegate{
     
@@ -51,7 +52,7 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
         tableView.delegate = self
         
         tableView.estimatedRowHeight = 200
-        // tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableViewAutomaticDimension
         
 
         let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
@@ -110,7 +111,8 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
         cell.activityName.text = activity.name
         cell.activityCommitment.text = activity.commitment
         cell.activityDescription.text = activity.description
-        print(activity.name)
+        cell.contentView.setNeedsLayout()
+        cell.contentView.layoutIfNeeded()
         return cell
         
     }
@@ -130,6 +132,16 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    @IBAction func pressGradeButton(_ sender: UIButton) {
+        let section = sender.tag
+        if (section < 0 || section > 3) {
+            SCLAlertView().showError("Incorrect Section", subTitle: "Section does not exist. Please try again!")
+            return
+        }
+        var sectionRect = tableView.rect(forSection: section)
+        sectionRect.size.height = tableView.frame.size.height
+        tableView.scrollRectToVisible(sectionRect, animated: true)
+    }
     /*
     // MARK: - Navigation
 
