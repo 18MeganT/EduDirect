@@ -15,6 +15,7 @@ class Course {
     var semester: Int!
     var workload: String!
     var description: String!
+    var courseID: NSManagedObjectID!
     init () {
         self.name = "Calculus"
         self.semester = 1
@@ -29,13 +30,18 @@ class Course {
         self.workload = workload ?? "N/A"
     }
     
-    func saveToCoreData(context: NSManagedObjectContext) {
+    func setID (objectID: NSManagedObjectID) {
+        self.courseID = objectID
+    }
+    
+    func saveToCoreData(context: NSManagedObjectContext) -> CourseData{
         let courseData = CourseData(context: context)
         courseData.course_description = self.description
         courseData.name = self.name
         courseData.grade = Int32(self.grade)
         courseData.semester = Int32(self.semester)
         courseData.workload = self.workload
+        return courseData
     }
     
 }

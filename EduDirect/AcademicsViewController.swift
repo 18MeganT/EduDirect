@@ -27,19 +27,15 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
     
     func didFinishAddingClass(form: AddCourseViewController, course: Course) {
         let grade = course.grade
-        if (grade! < 9 || grade! > 12)
-        {
-            gradesArray[0].classes.append(course)
-        }
-        else
-        {
-            gradesArray[grade!-9].classes.append(course)
-        }
-        tableView.reloadData()
+        
         let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
         let context = appDelegate.persistentContainer.viewContext
-        course.saveToCoreData(context: context)
+        let savedCourse = course.saveToCoreData(context: context)
         appDelegate.saveContext()
+        let objectID = savedCourse.objectID
+        course.setID(objectID: objectID)
+        gradesArray[grade!-9].classes.append(course)
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -65,6 +61,7 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
         for courseData in coursesData {
             let grade = Int(courseData.grade)
             let course = Course(courseData.name!, semester: Int(courseData.semester), description: courseData.course_description, grade: Int(courseData.grade), workload: courseData.workload!)
+            course.setID(objectID: courseData.objectID)
             
             if (grade < 9 || grade > 12)
             {
@@ -149,6 +146,42 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
         var sectionRect = tableView.rect(forSection: section)
         sectionRect.size.height = tableView.frame.size.height
         tableView.scrollRectToVisible(sectionRect, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        let cellSection = indexPath.section
+        let classes = gradesArray[cellSection].classes
+        let cellIndex = indexPath.row
+        return cellIndex != classes.count
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let alert = UIAlertController(title: "Delete Course", message: "Are you sure you want to permanently delete this course?", preferredStyle: .actionSheet)
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action: UIAlertAction) in
+                let cellSection = indexPath.section
+                guard let courseId = self.gradesArray[cellSection].classes[indexPath.row].courseID else {
+                    print("Error!")
+                    self.gradesArray[cellSection].classes.remove(at: indexPath.row)
+                    tableView.reloadData()
+                    return
+                }
+                
+                // Deletes from database.
+                let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+                let context = appDelegate.persistentContainer.viewContext
+                let courseData = context.object(with: courseId)
+                context.delete(courseData)
+                appDelegate.saveContext()
+                
+                self.gradesArray[cellSection].classes.remove(at: indexPath.row)
+                tableView.reloadData()
+                
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alert.addAction(deleteAction)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 
     /*
