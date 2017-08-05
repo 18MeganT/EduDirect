@@ -147,7 +147,7 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
         sectionRect.size.height = tableView.frame.size.height
         tableView.scrollRectToVisible(sectionRect, animated: true)
     }
-    
+
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         let cellSection = indexPath.section
         let classes = gradesArray[cellSection].classes
