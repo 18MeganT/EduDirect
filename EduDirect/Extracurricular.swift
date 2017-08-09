@@ -13,6 +13,7 @@ class Extracurricular {
     var grade: Int!
     var commitment: String!
     var description: String!
+    var objectID: NSManagedObjectID!
     init () {
         self.name = "Figure Skating"
         self.commitment = "8 hours/week"
@@ -26,12 +27,18 @@ class Extracurricular {
         self.grade = grade
         print(grade)
     }
-    func saveToCoreData(context: NSManagedObjectContext) {
+    
+    func setID (objectID: NSManagedObjectID) {
+        self.objectID = objectID
+    }
+
+    func saveToCoreData(context: NSManagedObjectContext)-> ActivityData {
         let activityData = ActivityData(context: context)
         activityData.activity_description = self.description
         activityData.name = self.name
         activityData.grade = Int32(self.grade)
         activityData.commitment = self.commitment
+        return activityData
     }
     
 }

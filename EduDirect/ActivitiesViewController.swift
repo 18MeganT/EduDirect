@@ -29,19 +29,15 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
     func didFinishAddingActivity(form: AddActivityViewController, activity: Extracurricular) {
         
         let grade = activity.grade
-        if (grade! < 9 || grade! < 12)
-        {
-            gradesArray[0].activities.append(activity)
-        }
-        else
-        {
-            gradesArray[grade!-9].activities.append(activity)
-        }
-        tableView.reloadData()
         let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
         let context = appDelegate.persistentContainer.viewContext
-        activity.saveToCoreData(context: context)
+        let savedActivity = activity.saveToCoreData(context: context)
         appDelegate.saveContext()
+        
+        let objectID = savedActivity.objectID
+        activity.setID(objectID: objectID)
+        gradesArray[grade!-9].activities.append(activity)
+        tableView.reloadData()
         
     }
     
@@ -66,6 +62,7 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
         for activityData in activitiesData {
             let grade = Int(activityData.grade)
             let activity = Extracurricular(activityData.name!, commitment: activityData.commitment!, description: activityData.activity_description!, grade: Int(activityData.grade))
+            activity.setID(objectID: activityData.objectID)
             if (grade < 9 || grade > 12)
             {
                 gradesArray[0].activities.append(activity)
@@ -142,6 +139,44 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
         sectionRect.size.height = tableView.frame.size.height
         tableView.scrollRectToVisible(sectionRect, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        let cellSection = indexPath.section
+        let activities = gradesArray[cellSection].activities
+        let cellIndex = indexPath.row
+        return cellIndex != activities.count
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let alert = UIAlertController(title: "Delete Activity", message: "Are you sure you want to permanently delete this activity?", preferredStyle: .actionSheet)
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action: UIAlertAction) in
+                let cellSection = indexPath.section
+                guard let activityId = self.gradesArray[cellSection].activities[indexPath.row].objectID else {
+                    print("Error!")
+                    self.gradesArray[cellSection].activities.remove(at: indexPath.row)
+                    tableView.reloadData()
+                    return
+                }
+                
+                // Deletes from database.
+                let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+                let context = appDelegate.persistentContainer.viewContext
+                let activityData = context.object(with: activityId)
+                context.delete(activityData)
+                appDelegate.saveContext()
+                
+                self.gradesArray[cellSection].activities.remove(at: indexPath.row)
+                tableView.reloadData()
+                
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alert.addAction(deleteAction)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
     /*
     // MARK: - Navigation
 
