@@ -25,9 +25,29 @@ class Course {
     init(_ name: String, semester: Int, description: String?, grade: Int, workload: String?) {
         self.name = name
         self.semester = semester
-        self.description = description ?? "No description"
+        if let description = description {
+            if description == "" {
+                self.description = "No description"
+            }
+            else {
+                self.description = description
+            }
+        }
+        else {
+            self.description = "No description"
+        }
         self.grade = grade
-        self.workload = workload ?? "N/A"
+        if let workload = workload {
+            if workload == "" {
+                self.workload = "N/A"
+            }
+            else {
+                self.workload = workload
+            }
+        }
+        else {
+            self.workload = "N/A"
+        }
     }
     
     func setID (objectID: NSManagedObjectID) {

@@ -10,12 +10,15 @@
 		0C816A707EF44F91F80E2587 /* Pods_EduDirectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5C993FA270C038FF062080 /* Pods_EduDirectTests.framework */; };
 		6207A50E1F036C0C0088D5D4 /* AcademicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6207A50D1F036C0C0088D5D4 /* AcademicsViewController.swift */; };
 		6207A5101F0379300088D5D4 /* AddActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6207A50F1F0379300088D5D4 /* AddActivityTableViewCell.swift */; };
+		623553B11F48B5D900913EB2 /* SuggestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623553B01F48B5D900913EB2 /* SuggestionsTableViewCell.swift */; };
 		6237DF461F21028D0016063D /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6237DF451F21028D0016063D /* Student.swift */; };
 		624A620C1F0A0FCA001EEC40 /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624A620B1F0A0FCA001EEC40 /* AddActivityViewController.swift */; };
 		6256B8AA1EFECA43008EB451 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6256B8A91EFECA43008EB451 /* Course.swift */; };
 		6256B8AF1EFECFFB008EB451 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6256B8AE1EFECFFB008EB451 /* ClassTableViewCell.swift */; };
 		6256B8B11EFED991008EB451 /* AddCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6256B8B01EFED991008EB451 /* AddCourseTableViewCell.swift */; };
 		6256B8B31EFEDE82008EB451 /* AddCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6256B8B21EFEDE82008EB451 /* AddCourseViewController.swift */; };
+		625B8BCA1F3E9250009291B3 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B8BC91F3E9250009291B3 /* SuggestionsViewController.swift */; };
+		625B8BCC1F4120AD009291B3 /* GiveSuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625B8BCB1F4120AD009291B3 /* GiveSuggestionsViewController.swift */; };
 		6278B0911EFDE15400575D46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6278B0901EFDE15400575D46 /* AppDelegate.swift */; };
 		6278B0931EFDE15400575D46 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6278B0921EFDE15400575D46 /* TitleViewController.swift */; };
 		6278B0961EFDE15400575D46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6278B0941EFDE15400575D46 /* Main.storyboard */; };
@@ -56,12 +59,15 @@
 		5B6EC7AE24DDFD1AF0D64F83 /* Pods-EduDirect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduDirect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EduDirect/Pods-EduDirect.debug.xcconfig"; sourceTree = "<group>"; };
 		6207A50D1F036C0C0088D5D4 /* AcademicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcademicsViewController.swift; sourceTree = "<group>"; };
 		6207A50F1F0379300088D5D4 /* AddActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivityTableViewCell.swift; sourceTree = "<group>"; };
+		623553B01F48B5D900913EB2 /* SuggestionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsTableViewCell.swift; sourceTree = "<group>"; };
 		6237DF451F21028D0016063D /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		624A620B1F0A0FCA001EEC40 /* AddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
 		6256B8A91EFECA43008EB451 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		6256B8AE1EFECFFB008EB451 /* ClassTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
 		6256B8B01EFED991008EB451 /* AddCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCourseTableViewCell.swift; sourceTree = "<group>"; };
 		6256B8B21EFEDE82008EB451 /* AddCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCourseViewController.swift; sourceTree = "<group>"; };
+		625B8BC91F3E9250009291B3 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
+		625B8BCB1F4120AD009291B3 /* GiveSuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveSuggestionsViewController.swift; sourceTree = "<group>"; };
 		6278B08D1EFDE15400575D46 /* EduDirect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EduDirect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6278B0901EFDE15400575D46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6278B0921EFDE15400575D46 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +142,7 @@
 				6256B8B01EFED991008EB451 /* AddCourseTableViewCell.swift */,
 				6207A50F1F0379300088D5D4 /* AddActivityTableViewCell.swift */,
 				6256B8AE1EFECFFB008EB451 /* ClassTableViewCell.swift */,
+				623553B01F48B5D900913EB2 /* SuggestionsTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -153,6 +160,8 @@
 		6256B8AB1EFECB11008EB451 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				625B8BCB1F4120AD009291B3 /* GiveSuggestionsViewController.swift */,
+				625B8BC91F3E9250009291B3 /* SuggestionsViewController.swift */,
 				62B754701F188DA5007C6B70 /* ProfileViewController.swift */,
 				624A620B1F0A0FCA001EEC40 /* AddActivityViewController.swift */,
 				6256B8B21EFEDE82008EB451 /* AddCourseViewController.swift */,
@@ -305,7 +314,7 @@
 				TargetAttributes = {
 					6278B08C1EFDE15400575D46 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 9N8T6ULD4P;
+						DevelopmentTeam = N2XH5G8YSZ;
 						ProvisioningStyle = Automatic;
 					};
 					6278B0A31EFDE15400575D46 = {
@@ -514,6 +523,7 @@
 				6256B8B31EFEDE82008EB451 /* AddCourseViewController.swift in Sources */,
 				6256B8AF1EFECFFB008EB451 /* ClassTableViewCell.swift in Sources */,
 				628A042C1F00CF5700295443 /* ActivityTableViewCell.swift in Sources */,
+				625B8BCA1F3E9250009291B3 /* SuggestionsViewController.swift in Sources */,
 				62B754711F188DA5007C6B70 /* ProfileViewController.swift in Sources */,
 				6207A50E1F036C0C0088D5D4 /* AcademicsViewController.swift in Sources */,
 				6207A5101F0379300088D5D4 /* AddActivityTableViewCell.swift in Sources */,
@@ -521,6 +531,8 @@
 				62C4536D1F11FB0C001CB37B /* EduDirect.xcdatamodeld in Sources */,
 				6278B0911EFDE15400575D46 /* AppDelegate.swift in Sources */,
 				6256B8AA1EFECA43008EB451 /* Course.swift in Sources */,
+				625B8BCC1F4120AD009291B3 /* GiveSuggestionsViewController.swift in Sources */,
+				623553B11F48B5D900913EB2 /* SuggestionsTableViewCell.swift in Sources */,
 				624A620C1F0A0FCA001EEC40 /* AddActivityViewController.swift in Sources */,
 				628A042A1F00CCA900295443 /* ActivitiesViewController.swift in Sources */,
 				6237DF461F21028D0016063D /* Student.swift in Sources */,
@@ -679,13 +691,14 @@
 			baseConfigurationReference = 5B6EC7AE24DDFD1AF0D64F83 /* Pods-EduDirect.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9N8T6ULD4P;
+				DEVELOPMENT_TEAM = N2XH5G8YSZ;
 				INFOPLIST_FILE = EduDirect/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.MMT.EduDirect;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MMT.PlannerQuest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -694,13 +707,14 @@
 			baseConfigurationReference = 3DD60FA4A9EA652214B2311C /* Pods-EduDirect.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9N8T6ULD4P;
+				DEVELOPMENT_TEAM = N2XH5G8YSZ;
 				INFOPLIST_FILE = EduDirect/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.MMT.EduDirect;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MMT.PlannerQuest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

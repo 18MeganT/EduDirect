@@ -68,7 +68,7 @@ class AddActivityViewController: FormViewController {
     @IBAction func donePressed(_ sender: Any) {
         let values = self.form.values()
         guard let name = values["name"] as? String else {
-            SCLAlertView().showError("Required Field", subTitle: "Please fill in the name of the course")
+            SCLAlertView().showError("Required Field", subTitle: "Please fill in the name of the activity")
             return;
         }
         let commitment = (values["commitment"] as? String) ?? ""

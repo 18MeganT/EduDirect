@@ -25,6 +25,8 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
     func didFinishAddingClass(form: AddCourseViewController, course: Course) {
         let grade = course.grade
         

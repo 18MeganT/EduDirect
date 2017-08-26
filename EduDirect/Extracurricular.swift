@@ -22,10 +22,26 @@ class Extracurricular {
     }
     init(_ name: String, commitment: String?, description: String?, grade: Int) {
         self.name = name
-        self.commitment = commitment ?? "N/A"
-        self.description = description ?? "No Description"
+        if let commitment = commitment {
+            if commitment == "" {
+                self.commitment = "N/A"
+            }
+            else {
+                self.commitment = commitment
+            }
+        }
+        else {
+            self.commitment = "N/A"
+        }
+        if let description = description {
+            if description == "" {
+                self.description = "No description"
+            }
+            else {
+                self.description = description
+            }
+        }
         self.grade = grade
-        print(grade)
     }
     
     func setID (objectID: NSManagedObjectID) {
