@@ -20,7 +20,15 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
     var gradesArray = [Grades(grade: 9, classes: []),
                        Grades(grade: 10, classes: []),
                        Grades(grade: 11, classes: []),
-                       Grades(grade: 12, classes: [])]
+                       Grades(grade: 12, classes: [])] {
+        didSet {
+            for i in 0...(gradesArray.count - 1) {
+                gradesArray[i].classes.sort(by: { (a: Course, b: Course) -> Bool in
+                    return a.semester < b.semester
+                })
+            }
+        }
+    }
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -117,6 +125,7 @@ class AcademicsViewController: UIViewController, UITableViewDataSource, UITableV
             let controller = storyboard.instantiateViewController(withIdentifier: "AddCourseNavigationController") as! UINavigationController
             let vc = controller.viewControllers[0] as! AddCourseViewController
             vc.delegate = self
+            vc.gradeDefault = String(gradesArray[indexPath.section].grade)
             self.present(controller, animated: true, completion: nil)
             
         }

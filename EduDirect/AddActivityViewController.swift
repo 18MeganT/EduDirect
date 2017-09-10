@@ -24,7 +24,10 @@ class AddActivityViewController: FormViewController {
     @IBOutlet weak var activityGrade: UITextField!
     
     @IBOutlet weak var activityDescription: UITextField!
+    
     weak var delegate: AddActivityControllerDelegate?
+    
+    var gradeDefault: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,22 +43,22 @@ class AddActivityViewController: FormViewController {
             <<< TextRow() { row in
                 row.tag = "grade"
                 row.title = "Grade"
-                row.placeholder = "9"
+                row.value = gradeDefault
                 row.add(rule: RuleRequired())
                 row.validationOptions = .validatesOnChange
                 
             }
             <<< TextRow() { row in
                 row.tag = "commitment"
-                row.title = "Commitment"
-                row.placeholder = "10 hours/week"
+                row.title = "Commitment (Optional)"
+                row.placeholder = "hours/week]"
                 
             }
         self.form +++ Section("Activity Description")
             <<< TextAreaRow() { row in
                 row.tag = "description"
-                row.title = "Description"
-                row.placeholder = "My main priority."
+                row.title = "Description (Optional)"
+                row.placeholder = "My main priority. [Optional]"
             }
         // Do any additional setup after loading the view.
     }
