@@ -35,6 +35,8 @@ class AddCourseViewController: FormViewController {
     
     weak var delegate: AddCourseControllerDelegate?
     
+    var gradeDefault: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,7 +52,7 @@ class AddCourseViewController: FormViewController {
             <<< TextRow() { row in
                 row.tag = "grade"
                 row.title = "Grade"
-                row.placeholder = "9"
+                row.value = gradeDefault
                 row.add(rule: RuleRequired())
                 row.validationOptions = .validatesOnChange
                 
@@ -65,15 +67,15 @@ class AddCourseViewController: FormViewController {
         }
             <<< TextRow() { row in
                 row.tag = "workload"
-                row.title = "Workload"
-                row.placeholder = "45 min/day"
+                row.title = "Workload (Optional)"
+                row.placeholder = "min/day"
                 
         }
         self.form +++ Section("Course Description")
             <<< TextAreaRow() { row in
                 row.tag = "description"
-                row.title = "Description"
-                row.placeholder = "A very difficult class."
+                row.title = "Description (Optional)"
+                row.placeholder = "A very difficult class. [Optional]"
         }
     }
 

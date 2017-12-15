@@ -123,6 +123,7 @@ class ActivitiesViewController: UIViewController,UITableViewDataSource, UITableV
             let controller = storyboard.instantiateViewController(withIdentifier: "AddActivityNavigationController") as! UINavigationController
             let vc = controller.viewControllers[0] as! AddActivityViewController
             vc.delegate = self
+            vc.gradeDefault = String(gradesArray[indexPath.section].grade)
             self.present(controller, animated: true, completion: nil)
             
         }
